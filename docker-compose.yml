@@ -1,0 +1,59 @@
+services:
+  app:
+    image: ${PROJECT_PREFIX}-php83:latest
+    container_name: jwt_auth_api_app
+    pull_policy: never
+    build:
+      context: ./docker/php83
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+    ports:
+      - "9000:9000"  # Порт FPM
+
+  postgres:
+    image: ${PROJECT_PREFIX}-postgres:latest
+    container_name: jwt_auth_api_postgres
+    pull_policy: never
+    build:
+      context: ./docker/postgres
+      args:  # Явно передаём переменные как build-args
+        DB_DATABASE: ${DB_DATABASE:-jwt_auth_api}
+        DB_USERNAME: ${DB_USERNAME:-jwt_auth_api_user}
+        DB_PASSWORD: ${DB_PASSWORD:-jwt_auth_api_password}
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-jwt_auth_api_password}  # Пароль суперпользователя
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}  # Опционально, по умолчанию 'postgres'
+      POSTGRES_DB: ${DB_DATABASE:-jwt_auth_api}  # Основная БД
+      DB_DATABASE: ${DB_DATABASE:-jwt_auth_api}  # Основная БД
+      DB_USERNAME: ${DB_USERNAME:-jwt_auth_api_user}  # Ваше приложение
+      DB_PASSWORD: ${DB_PASSWORD:-jwt_auth_api_password}  # Пароль приложения
+      DB_PORT: ${DB_PORT:-5432}
+    ports:
+      - "${HOST_DB_PORT:-5432}:${DB_PORT:-5432}"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  caddy:
+    image: ${PROJECT_PREFIX}-caddy:latest
+    container_name: jwt_auth_api_caddy
+    pull_policy: never
+    build:
+      context: ./docker/caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - ./:/var/www
+    depends_on:
+      - app
+
+volumes:
+  pg_data:
+    name: ${PROJECT_PREFIX}_pg_data
+  caddy_data:
+    name: ${PROJECT_PREFIX}_caddy_data
