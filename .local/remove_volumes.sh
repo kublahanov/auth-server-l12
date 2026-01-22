@@ -2,4 +2,4 @@
 
 # Скрипт для удаления Docker томов проекта
 
-docker volume rm jwt_auth_api_pg_data jwt_auth_api_caddy_data
+docker volume rm auth_api_pg_data auth_api_caddy_data

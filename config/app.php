@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'JWT Auth server'),
+    'name' => env('APP_NAME', 'Auth server'),
 
     /*
     |--------------------------------------------------------------------------

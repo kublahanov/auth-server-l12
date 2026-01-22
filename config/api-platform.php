@@ -17,8 +17,8 @@ use Illuminate\Auth\AuthenticationException;
 use Symfony\Component\Serializer\NameConverter\SnakeCaseToCamelCaseNameConverter;
 
 return [
-    'title' => 'JWT Auth server API',
-    'description' => 'API for JWT Auth server',
+    'title' => 'Auth server API',
+    'description' => 'API for Auth server',
     'version' => '1.0.0',
     'show_webby' => true,
 

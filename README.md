@@ -1,13 +1,13 @@
-# Шаблон JWT-auth REST API на базе Laravel 12 + API Platform
+# Шаблон REST API на базе Laravel 12 + API Platform
 
 ## О проекте
 
-Шаблон REST API на базе Laravel 12 + API Platform с предустановленной аутентификацией пользователя на основе JWT.
+Шаблон REST API на базе Laravel 12 + API Platform с предустановленной аутентификацией пользователя.
 
 **Он включает в себя:**
 
 - Чистую реализацию REST API.
-- Аутентификацию клиента (SPA и пр.) через JWT-токен со всеми необходимыми опциями: аутентификация с получением токена на предъявителя, обновление токена и т. д.
+- Аутентификацию клиента (SPA и пр.) через токен со всеми необходимыми опциями: аутентификация с получением токена на предъявителя, обновление токена и т. д.
 - Функционал для работы с пользователем: регистрация (с подтверждением электронной почты), аутентификация (вход в систему, выход из системы), смена пароля и т. д.
 
 ## Начало работы
@@ -24,8 +24,8 @@
 1. Склонируйте репозиторий, и перейдите в полученную папку:
 
 ```bash
-git clone git@github.com:kublahanov/jat-server-l12_ap.git
-cd jat-server-l12_ap
+git clone git@github.com:kublahanov/auth-server-l12_ap.git
+cd auth-server-l12_ap
 ```
 
 2. Запустите этот shell-скрипт в корне проекта:
@@ -90,8 +90,8 @@ cd jat-server-l12_ap
 ### Внесение вклада
 
 Если у вас есть предложения по улучшению этого проекта или вы хотите сообщить об ошибке, воспользуйтесь этими средствами:
-- https://github.com/kublahanov/jat-server-l12_ap/issues,
-- https://github.com/kublahanov/jat-server-l12_ap/pulls.
+- https://github.com/kublahanov/auth-server-l12_ap/issues,
+- https://github.com/kublahanov/auth-server-l12_ap/pulls.
 
 ### Лицензия
 
