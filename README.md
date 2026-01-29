@@ -1,8 +1,8 @@
-# Шаблон REST API на базе Laravel 12 + API Platform
+# Шаблон REST API на базе Laravel 12
 
 ## О проекте
 
-Шаблон REST API на базе Laravel 12 + API Platform с предустановленной аутентификацией пользователя.
+Шаблон REST API на базе Laravel 12 с предустановленной аутентификацией пользователя (Sanctum).
 
 **Он включает в себя:**
 
@@ -24,8 +24,8 @@
 1. Склонируйте репозиторий, и перейдите в полученную папку:
 
 ```bash
-git clone git@github.com:kublahanov/auth-server-l12_ap.git
-cd auth-server-l12_ap
+git clone git@github.com:kublahanov/auth-server-l12.git
+cd auth-server-l12
 ```
 
 2. Запустите этот shell-скрипт в корне проекта:
@@ -90,8 +90,8 @@ cd auth-server-l12_ap
 ### Внесение вклада
 
 Если у вас есть предложения по улучшению этого проекта или вы хотите сообщить об ошибке, воспользуйтесь этими средствами:
-- https://github.com/kublahanov/auth-server-l12_ap/issues,
-- https://github.com/kublahanov/auth-server-l12_ap/pulls.
+- https://github.com/kublahanov/auth-server-l12/issues,
+- https://github.com/kublahanov/auth-server-l12/pulls.
 
 ### Лицензия
 
