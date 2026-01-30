@@ -15,7 +15,7 @@ services:
       - "9000:9000"  # Порт FPM
 
   postgres:
-    image: auth_api-postgres:latest
+    image: auth_api_postgres:latest
     container_name: auth_api_postgres
     pull_policy: never
     build:
@@ -36,7 +36,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   caddy:
-    image: auth_api-caddy:latest
+    image: auth_api_caddy:latest
     container_name: auth_api_caddy
     pull_policy: never
     build:
@@ -51,7 +51,7 @@ services:
       - app
 
   mailpit:
-    image: auth_api-mailpit:latest
+    image: auth_api_mailpit:latest
     container_name: auth_api_mailpit
     pull_policy: never
     build:

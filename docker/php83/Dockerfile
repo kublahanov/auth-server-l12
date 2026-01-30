@@ -12,7 +12,7 @@ RUN apk add --no-cache \
 # PHP-расширения
 RUN apk add --no-cache --virtual .build-deps \
     $PHPIZE_DEPS linux-headers \
-    && docker-php-ext-install pdo pdo_pgsql bcmath \
+    && docker-php-ext-install pdo pdo_pgsql bcmath pcntl \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && apk del .build-deps
